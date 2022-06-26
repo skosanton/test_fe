@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+   db:
+    container_name: DjangoMongoDB
+    image: mongo
+    restart: always
+    volumes:
+      - DjangoData:/data/db
+      - DjangoDBConfig:/data/configdb
+    environment:
+      MONGO_INITDB_DATABASE: django
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 1004012
+    ports:
+      - 27017:27017
+#    network_mode: host
+    networks:
+      - django_network
+
+networks:
+  django_network:
+volumes:
+  DjangoData:
+  DjangoDBConfig:

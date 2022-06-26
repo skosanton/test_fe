@@ -1,0 +1,22 @@
+conda create --name MyDjangoEnv python=3.10
+activate MyDjangoEnv
+conda info
+conda install django
+cd test_fe
+python manage.py runserver
+python manage.py startapp myfrontapp
+#add "myfrontapp" to /test_fe/settings.py under "INSTALLED_APPS ="    so it will add new app to the project
+#add view to "myfrontapp/views.py" from django.http import HttpResponse and def index(request): return HttpResponse('Yo!').
+# ^^^ it will create kinda web page. You can pass html there too
+
+# To apply this view to the project you need to add urlpatterns path('', views.index, name='index'),  to "test_fe/urls.py" and  from myfrontapp import views 
+
+#Create folder for templates
+
+###CONNECT MONGODB
+pip/conda install pymongo[snappy,gssapi,srv,tls]
+pip/conda install dnspython
+
+pip install pipreqs
+pipreqs /path/to/project
+pipreqs
