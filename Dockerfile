@@ -49,7 +49,7 @@ server { \n\
         root /code/; \n\
         server_name _; \n\
         location /fe/static/ { \n\
-                rewrite /fe/static/(.*) http://django-test-static-files.s3.us-west-1.amazonaws.com/static/$1  break; \n\
+                rewrite /fe/static/(.*) https://django-test-static-files.s3.us-west-1.amazonaws.com/static/$1  break; \n\
 #                return 301 $scheme://django-test-static-files.s3.us-west-1.amazonaws.com$request_uri; \n\
 #                alias /code/static/; \n\
         } \n\
